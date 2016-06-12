@@ -27,6 +27,16 @@ function upload($name, $loc){
   } 
 }
 
+function filecount() {
+    $directory = "/upload/";
+    $filecount = 0;
+    $files = glob($directory . "*");
+    if ($files){
+        $filecount = count($files);
+    }
+    return "There were $filecount files";
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,6 +61,8 @@ if(($_SERVER['REQUEST_METHOD'] == 'POST') &&  isset($_FILES['fail'])) {
         echo "<p>Faili &uuml;leslaadimine ebaonnestus</p>";
     }
 }
+
+echo "<p>".filecount()."</p>";
 ?>
 
 </body>
