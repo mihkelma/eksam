@@ -28,7 +28,7 @@ function upload($name, $loc){
 }
 
 function filecount() {
-    $directory = "/home/mmatson/public_html/VR1/eksam";
+    $directory = "/home/mmatson/public_html/VR1/eksam/upload/";
     $filecount = 0;
     $files = glob($directory . "*");
     if ($files){
